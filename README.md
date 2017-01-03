@@ -13,9 +13,9 @@ Things you may want to cover:
 
 * Rails version '~> 5.0.0', '>= 5.0.0.1'
 
-* System dependencies:
-+ An updated version of [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-+ [Jenkins LTS Release for Mac OS X](https://jenkins.io/doc/book/getting-started/installing/)
+* System dependencies:  
+  + An updated version of [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  + [Jenkins LTS Release for Mac OS X](https://jenkins.io/doc/book/getting-started/installing/)
 
 * Configuration
 

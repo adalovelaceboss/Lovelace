@@ -1,6 +1,6 @@
 stormpath:
   application:
-    href: null
+    href: <%= ENV['STORMPATH_APPLICATION_HREF'] %>
     name: null
 
   web:
@@ -126,7 +126,7 @@ stormpath:
       view: "stormpath/rails/verify_email/new"
 
     login:
-      enabled: true
+      enabled: false
       uri: "/login"
       nextUri: "/"
       view: "stormpath/rails/login/new"
@@ -151,7 +151,7 @@ stormpath:
           - "password"
 
     logout:
-      enabled: true
+      enabled: false
       uri: "/logout"
       nextUri: "/"
 
@@ -159,7 +159,7 @@ stormpath:
     # will be automatically enabled if the default account store for the defined
     # Stormpath application has the password reset workflow enabled.
     forgotPassword:
-      enabled: null
+      enabled: false
       uri: "/forgot"
       view: "stormpath/rails/forgot_password/new"
       nextUri: "/login?status=forgot"
@@ -168,7 +168,7 @@ stormpath:
     # will be automatically enabled if the default account store for the defined
     # Stormpath application has the password reset workflow enabled.
     changePassword:
-      enabled: null
+      enabled: false
       autoLogin: false
       uri: "/change"
       nextUri: "/login?status=reset"

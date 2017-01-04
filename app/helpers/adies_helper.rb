@@ -1,0 +1,2 @@
+module AdiesHelper
+end

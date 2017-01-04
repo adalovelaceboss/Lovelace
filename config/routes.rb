@@ -5,19 +5,21 @@ Rails.application.routes.draw do
 
   get 'homepages/index'
 
-  get 'adies/index' => 'adies#index', as: 'adies'
+  # get 'adies/index' => 'adies#index', as: 'adies'
+  #
+  # get 'adie/:id' => 'adies#show', as: 'adie'
+  #
+  # get 'adie/new' => 'adies#new', as: 'new_adie'
+  #
+  # post 'adie/create' => 'adies#create', as: 'create_adie'
+  #
+  # get 'adie/:id/edit' => 'adies#edit', as: 'edit_adie'
+  #
+  # patch 'adie/:id/update' => 'adies#update', as: 'update_adie'
+  #
+  # delete 'adie/:id/destroy' => 'adies#destroy', as: 'delete_adie'
 
-  get 'adie/:id' => 'adies#show', as: 'adie'
-
-  get 'adie/new' => 'adies#new', as: 'new_adie'
-
-  post 'adie/create' => 'adies#create', as: 'create_adie'
-
-  get 'adie/:id/edit' => 'adies#edit', as: 'edit_adie'
-
-  patch 'adie/:id/update' => 'adies#update', as: 'update_adie'
-
-  delete 'adie/:id/destroy' => 'adies#destroy', as: 'delete_adie'
+  resources :adies
 
   # get 'employees/index' => 'employees#index', as: 'employees'
   #

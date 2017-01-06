@@ -42,6 +42,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'minitest-vcr'
+  gem 'pry'
 end
 
 group :test do

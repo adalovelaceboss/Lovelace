@@ -1,6 +1,3 @@
-<h1>Adies#index</h1>
-<p>Find me in app/views/adies/index.html.erb</p>
-
 <% @adies.each do |adie| %>
   <section>
     <h2> <%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %> </h2>

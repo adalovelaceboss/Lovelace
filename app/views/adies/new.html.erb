@@ -1,7 +1,10 @@
-<h1>Adies#new</h1>
-<p>Find me in app/views/adies/new.html.erb</p>
+<%= render partial: "new", locals: {action_name: "create"} %>
 
-<%= form_tag({action: :upload}, multipart: true) do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import!" %>
-<% end %>
+<section>
+  <h2>Upload Multiple Adies via CSV:</h2>
+  <h4>Note: Please ensure your file does not have headers.</h4>
+  <%= form_tag({action: :upload}, multipart: true) do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import!" %>
+  <% end %>
+</section>

@@ -9,4 +9,8 @@
   <h3> Github Username: <%= link_to @adie.github_username, "https://github.com/#{@adie.github_username}", target: '_blank' %> </h3>
   <h3> Twitter (Someday I will be a link!): <%= @adie.twitter_handle %> </h3>
   <h3> Linkedin: <%= link_to @adie.linkedin, "#{@adie.linkedin}", target: '_blank' %> </h3>
+
+  <%= button_to "Edit", {action: "edit", id: @adie.id}, method: :get, :class => 'btn' %>
+  <%= button_to "Delete", {action: "destroy", id: @adie.id}, method: :delete,  data: {confirm: "Are you sure you want to delete this?"}, :class => 'btn' %>
+
 </section>

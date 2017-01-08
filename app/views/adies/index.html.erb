@@ -5,5 +5,7 @@
   <section>
     <h2> <%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %> </h2>
     <h3> Cohort: <%= adie.cohort %> </h3>
+    <h3> Internship Company: <%= adie.internship_company %> </h3>
+    <h3> Currently At: <%= adie.current_company %> </h3>
   </section>
 <% end %>

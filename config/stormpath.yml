@@ -128,7 +128,7 @@ stormpath:
     login:
       enabled: true
       uri: "/login"
-      nextUri: "/"
+      # nextUri: "/"
       view: "stormpath/rails/login/new"
       form:
         fields:

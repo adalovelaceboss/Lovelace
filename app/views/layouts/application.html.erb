@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <header>
+      <h1>Lovelace: Ada Developers Academy Alumni App</h1>
+
+      <% if ! signed_in? %>
+        <%= button_to "Log in", login_path %>
+      <% end %>
+
+      <% if signed_in? %>
+        <p>Logged in as: <%= current_account.given_name %></p>
+        <%= button_to "Log out", logout_path, method: :post %>
+      <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

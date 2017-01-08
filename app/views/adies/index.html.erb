@@ -1,14 +1,9 @@
 <h1>Adies#index</h1>
 <p>Find me in app/views/adies/index.html.erb</p>
 
-
-
-<%= form_tag({action: :upload}, multipart: true) do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import!" %>
-<% end %>
-
-<% if signed_in? %>
-  <p>Logged in as: <%= current_account.given_name %></p>
-  <%= link_to "Log out", logout_path, method: :post %>
+<% @adies.each do |adie| %>
+  <section>
+    <h2> <%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %> </h2>
+    <h3> Cohort: <%= adie.cohort %> </h3>
+  </section>
 <% end %>

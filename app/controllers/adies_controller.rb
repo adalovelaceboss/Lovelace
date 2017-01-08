@@ -2,6 +2,7 @@ class AdiesController < ApplicationController
   before_action :require_authentication!
 
   def index
+    @adies = Adie.all
   end
 
   def show

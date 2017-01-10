@@ -14,7 +14,7 @@
 
       <% if ! signed_in? %>
         <%= link_to "Companies", companies_path %>
-        <%= button_to "Log in", login_path %>
+        <%= button_to "Log in", login_path, class: 'button' %>
       <% end %>
 
       <% if signed_in? %>
@@ -22,7 +22,7 @@
         <%= link_to "Companies", companies_path %>
         <%= link_to "Adies", adies_path %>
         <%= link_to "Staff", employees_path %>
-        <%= button_to "Log out", logout_path, method: :post %>
+        <%= button_to "Log out", logout_path, method: :post, class: 'button' %>
       <% end %>
     </header>
 

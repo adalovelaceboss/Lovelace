@@ -85,7 +85,7 @@ stormpath:
             required: true
             type: "text"
           email:
-            enabled: true
+            enabled: false
             visible: true
             label: "Email"
             placeholder: "Email"

@@ -2,7 +2,10 @@ require 'test_helper'
 
 class AdiesControllerTest < ActionDispatch::IntegrationTest
 
-  # let
+  def setup
+    @adie1 = adies(:one)
+    @adie2 = adies(:two)
+  end
 
   test "should get index" do
     # get '/adies'
@@ -11,7 +14,6 @@ class AdiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    @adie2 = adies(:two)
     get adie_url(@adie2)
     assert_response :redirect
   end

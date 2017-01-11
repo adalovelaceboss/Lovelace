@@ -32,12 +32,12 @@ class AdiesController < ApplicationController
     end
   end
 
-  def upload
-    # @imported = Adie.import(params[:file])
-    # @imported.save
-    #
-    # redirect_to adies_path
-  end
+  # def import
+  #   Adie.import(params[:file])
+  #   # @imported.save
+  #   #
+  #   redirect_to adies_path, notice: 'Adies imported!'
+  # end
 
   def destroy
     Adie.destroy(params[:id])

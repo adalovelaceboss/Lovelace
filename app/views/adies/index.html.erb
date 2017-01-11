@@ -1,3 +1,12 @@
+<%= button_to "Add New Adie", {action: "new"}, method: :get, :class => 'button' %>
+<!-- <%= button_to "Upload Multiple Adies", {action: "upload"}, method: :get, :class => 'button' %> -->
+
+<!-- <h4>Import Multiple Adies</h4>
+<%# form_tag import_adies_path, multipart: true do %>
+  <%# file_field_tag :file %>
+  <%# submit_tag "Import" %>
+<%# end %> -->
+
 <% @adies.each do |adie| %>
   <section>
     <h2> <%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %> </h2>

@@ -13,4 +13,16 @@ class Adie < ApplicationRecord
   #   end
   # end
 
+  # def self.import(file)
+  #   spreadsheet = Roo::Spreadsheet.open(file.path)
+  #   spreadsheet.each do |i|
+  #     row = Hash[[spreadsheet.row(i)].transpose]
+  #     adie = find_by(first_name: row["first_name"]) || new
+  #     adie.attributes = row.to_hash
+  #     adie.save!
+  #   end
+  # end
+
+  #  AND last_name: row["last_name"]
+
 end

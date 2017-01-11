@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get 'homepages/index'
 
   resources :adies
+  # do
+  #   collection do
+  #     post :import
+  #   end
+  # end
 
   patch 'adies' => 'adies#upload'
 

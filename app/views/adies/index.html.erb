@@ -1,8 +1,16 @@
-<% @adies.each do |adie| %>
-  <section>
-    <h2> <%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %> </h2>
-    <h3> Cohort: <%= adie.cohort %> </h3>
-    <h3> Internship Company: <%= adie.internship_company %> </h3>
-    <h3> Currently At: <%= adie.current_company %> </h3>
-  </section>
-<% end %>
+<div class="basic">
+  <div class="row small-up-1 medium-up-3 large-up-5">
+    <% if @adies != nil %>
+      <% @adies.each do |adie| %>
+      <section class="column">
+          <div class="adies-info">
+            <li><%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %></li>
+            <li>Cohort: <%= adie.cohort %></li>
+          </div>
+      </section>
+      <% end %>
+  </div>
+  <% else %>
+    <h3>We found no Adies matching your search.</h3>
+  <% end %>
+</div>

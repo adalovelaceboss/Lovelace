@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   resources :adies
 
-  patch 'adies' => 'adies#upload'
-
   resources :employees
 
   resources :companies

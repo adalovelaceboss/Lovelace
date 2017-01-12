@@ -12,3 +12,10 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( foundation.css )
 Rails.application.config.assets.precompile += %w( app.css )
+
+if Rails.env.development?
+  require 'webmock'
+  include WebMock::API
+
+  stub_request(:post, ENV["STORMPATH_APPLICATION_HREF"]).to_return(body: "stormpath_response.json")
+end

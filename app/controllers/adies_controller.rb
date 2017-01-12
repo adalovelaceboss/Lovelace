@@ -13,12 +13,15 @@ class AdiesController < ApplicationController
   end
 
   def create
-    # upload
-
-    if @adie = Adie.create(adie_params)
-      render 'show'
-    else
-      render 'new'
+    if params[:file]
+      Adie.import(params[:file])
+      redirect_to adies_path
+    elsif params[:adie]
+      if @adie = Adie.create(adie_params)
+        render 'show'
+      else
+        render 'new'
+      end
     end
   end
 
@@ -30,13 +33,6 @@ class AdiesController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def upload
-    # @imported = Adie.import(params[:file])
-    # @imported.save
-    #
-    # redirect_to adies_path
   end
 
   def destroy

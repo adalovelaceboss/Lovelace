@@ -17,7 +17,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'stormpath-rails', '~> 2.3.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # OS static analysis tool which checks for security vulnerabilities
 gem 'brakeman', '~> 3.4'
 # Use jquery as the JavaScript library
@@ -42,6 +41,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'minitest-vcr'
   gem 'pry'
+  # For help making Stormpath json in development
+  gem 'webmock'
 end
 
 group :test do

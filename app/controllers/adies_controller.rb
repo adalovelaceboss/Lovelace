@@ -1,5 +1,5 @@
 class AdiesController < ApplicationController
-  before_action :require_authentication!
+  # before_action :require_authentication!
   before_action :find_adie, only: [:show, :edit, :update]
 
   def index

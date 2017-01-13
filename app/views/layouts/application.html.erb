@@ -29,30 +29,30 @@
       <div id="responsive-menu">
         <div class="top-bar-left">
           <ul class="menu">
-            <% if ! signed_in? %>
+            <%# if ! signed_in? %>
               <li><%= link_to "Companies", companies_path %></li>
               <li><%= link_to "Adies", adies_path %></li>
               <li><%= link_to "Staff", employees_path %></li>
               <!-- Remove these last two once styling is complete and API can be turned back on -->
-            <% end %>
+            <%# end %>
 
-            <% if signed_in? %>
-              <li><%= link_to "Companies", companies_path %></li>
-              <li><%= link_to "Adies", adies_path %></li>
-              <li><%= link_to "Staff", employees_path %></li>
-            <% end %>
+            <%# if signed_in? %>
+              <!-- <li><%# link_to "Companies", companies_path %></li>
+              <li><%# link_to "Adies", adies_path %></li>
+              <li><%# link_to "Staff", employees_path %></li> -->
+            <%# end %>
           </ul>
         </div>
         <div class="top-bar-right">
           <ul class="menu">
-            <% if ! signed_in? %>
+            <%# if ! signed_in? %>
               <%= button_to "Log in", login_path, class: 'button' %>
-            <% end %>
+            <%# end %>
 
-            <% if signed_in? %>
-              <li class="menu-text">Hello, <%= current_account.given_name %>!</li>
-              <li><%= button_to "Log out", logout_path, method: :post, class: 'button' %></li>
-            <% end %>
+            <%# if signed_in? %>
+              <!-- <li class="menu-text">Hello, <%# current_account.given_name %>!</li>
+              <li><%# button_to "Log out", logout_path, method: :post, class: 'button' %></li> -->
+            <%# end %>
             <!-- <li><input type="search" placeholder="Search"></li>
             <li><button type="button" class="button">Search</button></li> -->
           </ul>

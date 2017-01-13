@@ -5,9 +5,7 @@ class AdiesController < ApplicationController
   def index
     @adies = Adie.order(:first_name, :last_name).all
 
-    if @adies != nil
-      @adies, @alphaParams = @adies.alpha_paginate(params[:letter], {:enumerate => true}){|@adie| @adie.first_name}
-    end
+    @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name}
   end
 
   def show; end

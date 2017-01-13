@@ -1,8 +1,7 @@
 <div class="basic">
   <%= alphabetical_paginate @alphaParams %>
 
-  <div class="row small-up-1 medium-up-3 large-up-5">
-    <div id="pagination_table">
+  <div class="row small-up-1 medium-up-3 large-up-5" id="pagination_table">
     <% if @adies != nil %>
       <% @adies.each do |adie| %>
       <section class="column">
@@ -12,7 +11,6 @@
           </div>
       </section>
       <% end %>
-    </div>
   </div>
   <% else %>
     <h3>We found no Adies matching your search.</h3>

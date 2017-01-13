@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    alphabetical_paginate (2.3.2)
     ansi (1.5.0)
     arel (7.1.4)
     axiom-types (0.1.1)
@@ -238,6 +239,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  alphabetical_paginate
   better_errors
   binding_of_caller
   brakeman (~> 3.4)

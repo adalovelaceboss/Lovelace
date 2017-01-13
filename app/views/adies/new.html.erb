@@ -3,7 +3,7 @@
 <section>
   <h2>Upload Multiple Adies via CSV:</h2>
   <h4>Note: Please ensure your file does not have headers.</h4>
-  <%= form_tag({action: :import}, multipart: true) do %>
+  <%= form_tag({action: :create}, multipart: true) do %>
     <%= file_field_tag :file %>
     <%= button_to "Import", { controller: 'adies', method: 'post'} %>
   <% end %>

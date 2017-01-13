@@ -3,7 +3,11 @@ class AdiesController < ApplicationController
   before_action :find_adie, only: [:show, :edit, :update]
 
   def index
-    @adies = Adie.all
+    @adies = Adie.order(:first_name, :last_name).all
+
+    if @adies != nil
+      @adies, @alphaParams = @adies.alpha_paginate(params[:letter], {:enumerate => true}){|@adie| @adie.first_name}
+    end
   end
 
   def show; end
@@ -35,6 +39,9 @@ class AdiesController < ApplicationController
     end
   end
 
+  def search()
+  end
+
   def destroy
     Adie.destroy(params[:id])
 
@@ -44,7 +51,7 @@ class AdiesController < ApplicationController
 private
 
   def adie_params
-    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company)
+    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company, :query)
     # SHOULD USE when passing a hash to any of those methods, do this to prevent injection risks
   end
 

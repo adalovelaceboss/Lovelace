@@ -40,7 +40,6 @@ class AdiesController < ApplicationController
 
   def destroy
     Adie.destroy(params[:id])
-
     redirect_to adies_path
   end
 

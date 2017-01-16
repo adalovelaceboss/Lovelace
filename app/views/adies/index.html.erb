@@ -1,7 +1,7 @@
 <div class="basic">
-  <h4>Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
+  <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
 
-  <div class="row small-up-1 medium-up-3 large-up-5" id="pagination_table">
+  <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
     <% if @adies != nil %>
       <% @adies.each do |adie| %>
       <section class="column">

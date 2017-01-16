@@ -1,2 +1,23 @@
-<h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
+<section>
+  <div class="row small-up-1 large-up-2">
+    <section class="column">
+      <%= image_tag("logos/#{@company.logo}") %>
+    </section>
+    <section class="column">
+      <h2> <%= @company.company_name %> </h2>
+      <h3> <%= @company.address %> </h3>
+      <h3> <%= "#{@company.city}, #{@company.state} #{@company.zip_code}" %> </h3>
+      <h3> What they do: <%= @company.business_field %> </h3>
+      <h3> <%= link_to @company.website, "#{@company.website}", target: '_blank' %> </h3>
+    </section>
+  </div>
+
+  <div class="row">
+    <div class="show_buttons">
+      <%= button_to "Edit", {action: "edit", id: @company.id}, method: :get, :class => 'button' %>
+      <%= button_to "Delete", {action: "destroy", id: @company.id}, method: :delete,  data: {confirm: "Are you sure you want to delete this?"}, :class => 'button alert' %>
+    </div>
+  </div>
+
+
+</section>

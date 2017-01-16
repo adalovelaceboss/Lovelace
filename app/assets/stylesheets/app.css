@@ -6,13 +6,13 @@ h1, h2, h3, h4, p {
   font-family: "Open Sans", sans-serif !important;
 }
 
-section.column {
+/*section.column {
   width: 50%;
-  margin-top: 2%;
-}
+}*/
 
 .column {
-  padding: 1% 1.5% 2% 1.5%;
+  margin-top: 3%;
+  padding: 3%;
 }
 
 .headline {
@@ -22,7 +22,7 @@ section.column {
 }
 
 .headline li {
-  padding-top: 8%;
+  padding-top: 6%;
   list-style-type: none;
 }
 
@@ -33,4 +33,14 @@ section.column {
 
 .headline a:hover, .headline a:focus {
   text-decoration: underline;
+}
+
+.pagination_bar {
+  margin-top: 2%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.show_buttons {
+  text-align: center;
 }

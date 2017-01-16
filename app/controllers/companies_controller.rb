@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
     if params[:file]
       Company.import(params[:file])
       redirect_to companies_path
-    elsif params[:adie]
+    elsif params[:company]
       if @company = Company.create(company_params)
         render 'show'
       else

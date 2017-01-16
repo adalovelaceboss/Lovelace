@@ -15,22 +15,22 @@ section.column {
   padding: 1% 1.5% 2% 1.5%;
 }
 
-.adies-info {
+.headline {
 	font-size: 1.5rem;
   font-weight: bold;
 	text-align: center;
 }
 
-.adies-info li {
+.headline li {
   padding-top: 8%;
+  list-style-type: none;
 }
 
-.adies-info a {
+.headline a {
 	color: black;
   margin: 3%;
-  text-decoration: none;
 }
 
-.adies-info a:hover, .headline a:focus {
+.headline a:hover, .headline a:focus {
   text-decoration: underline;
 }

@@ -5,9 +5,9 @@
     <% if @adies != nil %>
       <% @adies.each do |adie| %>
       <section class="column">
-          <div class="adies-info">
+          <div class="headline">
             <li><%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %></li>
-            <li>Cohort: <%= adie.cohort %></li>
+            <li>Cohort <%= adie.cohort %></li>
           </div>
       </section>
       <% end %>

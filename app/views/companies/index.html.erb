@@ -5,10 +5,9 @@
     <% if @companies != nil %>
       <% @companies.each do |company| %>
       <section class="column">
-          <div class="adies-info">
+          <div class="headline">
             <%= image_tag "logos/#{company.logo}" %>
-            <li><%= link_to company.company_name, company_path(company.id) %></li>
-            <li>Located in: <%= company.city + ", " + company.state %></li>
+            <li><%= company.city + ", " + company.state %></li>
           </div>
       </section>
       <% end %>

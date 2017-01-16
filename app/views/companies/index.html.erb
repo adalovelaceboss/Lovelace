@@ -1,2 +1,19 @@
-<h1>Companies#index</h1>
-<p>Find me in app/views/companies/index.html.erb</p>
+<div class="basic">
+  <h4>Sort by Company Name: <%= alphabetical_paginate @alphaParams %></h4>
+
+  <div class="row small-up-1 medium-up-3 large-up-5" id="pagination_table">
+    <% if @companies != nil %>
+      <% @companies.each do |company| %>
+      <section class="column">
+          <div class="adies-info">
+            <%= image_tag "logos/#{company.logo}" %>
+            <li><%= link_to company.company_name, company_path(company.id) %></li>
+            <li>Located in: <%= company.city + ", " + company.state %></li>
+          </div>
+      </section>
+      <% end %>
+  </div>
+  <% else %>
+    <h3>We found no companies matching your search.</h3>
+  <% end %>
+</div>

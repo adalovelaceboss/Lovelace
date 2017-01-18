@@ -5,5 +5,8 @@
 
 
 $(document).on('turbolinks:load', function() {
-  $(function(){ $(document).foundation(); });
+  $(function(){
+    $(document).foundation();
+    $(window).trigger('load.zf.sticky'); 
+   });
 });

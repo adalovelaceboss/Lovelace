@@ -35,7 +35,11 @@ class AdiesController < ApplicationController
     end
   end
 
-  def search()
+  def search
+   @adies = Adies.search(params[:query])
+   # if product query matches a product(s)
+   # render those image(s), if any match.
+   render 'index'
   end
 
   def destroy
@@ -46,7 +50,7 @@ class AdiesController < ApplicationController
 private
 
   def adie_params
-    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company, :query)
+    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company, :q)
     # SHOULD USE when passing a hash to any of those methods, do this to prevent injection risks
   end
 

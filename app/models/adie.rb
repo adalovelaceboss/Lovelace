@@ -13,4 +13,8 @@ class Adie < ApplicationRecord
     end
   end
 
+  def self.search(query)
+    where("name LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
+  end
+
 end

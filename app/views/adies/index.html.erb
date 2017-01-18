@@ -1,4 +1,10 @@
 <div class="basic">
+
+  <%= form_tag(search_adies_path(), :method => "get") do %>
+    <%= search_field_tag("query", nil, :placeholder => "Search in Adies")%>
+    <%= submit_tag "Submit", :name => nil, class: 'buttons' %>
+  <% end %>
+
   <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
 
   <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">

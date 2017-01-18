@@ -44,3 +44,17 @@ h1, h2, h3, h4, p {
 .show_buttons {
   text-align: center;
 }
+
+.title-bar {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .title-bar {
+    display: block;
+  }
+
+  .top-bar-left {
+    display: none;
+  }
+}

@@ -1,9 +1,11 @@
 <div class="basic">
 
-  <%= form_tag(search_adies_path(), :method => "get") do %>
-    <%= search_field_tag("query", nil, :placeholder => "Search in Adies")%>
-    <%= submit_tag "Submit", :name => nil, class: 'buttons' %>
-  <% end %>
+  <div id="adie_search">
+    <%= search_form_for @search_adie do |f| %>
+      <%= f.search_field :cohort_cont, placeholder: "Search Adies by Cohort"%>
+      <%= f.submit "", class: "search-button", value: "search"%>
+    <% end %>
+  </div>
 
   <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
 
@@ -29,3 +31,12 @@
     <h3>We found no Adies matching your search.</h3>
   <% end %>
 </div>
+
+<script>
+  $("#adie_search input").keypress(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+        $("#adie_search").submit([name: "commit", value: "search"]);
+     }
+  });
+</script>

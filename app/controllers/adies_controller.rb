@@ -1,9 +1,21 @@
 class AdiesController < ApplicationController
   # before_action :require_authentication!
   before_action :find_adie, only: [:show, :edit, :update]
+  before_filter :set_search
 
   def index
-    @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+    # @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+
+    if !params[:commit].nil? && params[:commit].downcase == "search"
+      if !params[:q].blank?
+        @results = Adie.search(params[:q])
+      else
+        @results = Adie.search({:id_eq => 0})
+      end
+        @adies = @results.result
+    else
+      @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+    end
   end
 
   def show; end
@@ -33,13 +45,6 @@ class AdiesController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def search
-   @adies = Adies.search(params[:query])
-   # if product query matches a product(s)
-   # render those image(s), if any match.
-   render 'index'
   end
 
   def destroy

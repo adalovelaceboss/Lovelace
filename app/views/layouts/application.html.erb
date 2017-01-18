@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Lovelace</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Lovelace" %></title>
+
+    <%= stylesheet_link_tag "application.css" %>
+    <%= stylesheet_link_tag "foundation.css" %>
+    <%= stylesheet_link_tag "app.css" %>
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+      <div class="title-bar-title"><%= link_to "Lovelace", root_path%></div>
+    </div>
+      <div class="top-bar" id="top-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown vertical medium-horizontal menu">
+            <h2><%= link_to "Lovelace", root_path%></h2>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="dropdown vertical medium-horizontal menu">
+            <%# if ! signed_in? %>
+              <li><%= link_to "Sponsor Companies", companies_path %></li>
+              <li><%= link_to "Adies Directory", adies_path %></li>
+              <li><%= link_to "Staff", employees_path %></li>
+              <!-- Remove these last two once styling is complete and API can be turned back on -->
+            <%# end %>
+
+            <%# if signed_in? %>
+
+              <!-- <li class="menu-text">Hello, <%# current_account.given_name %>!</li>
+              <li><%# button_to "Log out", logout_path, method: :post, class: 'button' %></li> -->
+            <%# end %>
+            <li class="menu-text"><input type="search" placeholder="Not working yet"></li>
+            <li class="menu-text"><button type="button" class="button">Search</button></li>
+
+            <%# if ! signed_in? %>
+              <li class="menu-text"><%= button_to "Log in", login_path, class: 'button' %></li>
+            <%# end %>
+          </ul>
+        </div>
+      </div>
+
     <%= yield %>
+
   </body>
 </html>

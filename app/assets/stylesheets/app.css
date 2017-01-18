@@ -1,0 +1,60 @@
+body {
+  font-size: 14pt;
+}
+
+h1, h2, h3, h4, p {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+/*section.column {
+  width: 50%;
+}*/
+
+.column {
+  margin-top: 3%;
+  padding: 3%;
+}
+
+.headline {
+	font-size: 1.5rem;
+  font-weight: bold;
+	text-align: center;
+}
+
+.headline li {
+  padding-top: 6%;
+  list-style-type: none;
+}
+
+.headline a {
+	color: black;
+  margin: 3%;
+}
+
+.headline a:hover, .headline a:focus {
+  text-decoration: underline;
+}
+
+.pagination_bar {
+  margin-top: 2%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.show_buttons {
+  text-align: center;
+}
+
+.title-bar {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .title-bar {
+    display: block;
+  }
+
+  .top-bar-left {
+    display: none;
+  }
+}

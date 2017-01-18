@@ -1,0 +1,20 @@
+<div class="basic">
+  <h4 class="pagination_bar">Sort by Company Name: <%= alphabetical_paginate @alphaParams %></h4>
+
+  <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
+    <% if @companies != nil %>
+      <% @companies.each do |company| %>
+      <section class="column">
+          <div class="headline">
+            <%= link_to company_path(company.id) do %>
+              <%= image_tag("logos/#{company.logo}") %>
+            <% end %>
+            <li><%= company.city + ", " + company.state %></li>
+          </div>
+      </section>
+      <% end %>
+  </div>
+  <% else %>
+    <h3>We found no companies matching your search.</h3>
+  <% end %>
+</div>

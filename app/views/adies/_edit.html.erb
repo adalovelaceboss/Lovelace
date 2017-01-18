@@ -1,0 +1,63 @@
+<div class="form">
+  <section>
+
+    <h2>Add a New Adie:</h2>
+
+    <%= form_for @adie, url: adie_path do |f| %>
+
+    <div class="field">
+      <%= f.label "First Name: " %>
+      <%= f.text_field :first_name, :first_name => nil, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Last Name: " %>
+      <%= f.text_field :last_name, :last_name => nil, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Cohort: " %>
+      <%= f.text_field :cohort, :cohort => nil, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Email: " %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Pronouns: " %>
+      <%= f.text_field :pref_pronouns %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Twitter: " %>
+      <%= f.text_field :twitter_handle %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Linkedin: " %>
+      <%= f.text_field :linkedin %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Github Username: " %>
+      <%= f.text_field :github_username %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Internship Company: " %>
+      <%= f.text_field :internship_company %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Current Company: " %>
+      <%= f.text_field :current_company %>
+    </div>
+
+      <%= f.submit 'Submit', :class => 'btn' %>
+
+    <% end %>
+  </section>
+
+</div>

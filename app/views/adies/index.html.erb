@@ -12,6 +12,13 @@
       <% @adies.each do |adie| %>
       <section class="column">
           <div class="headline">
+            <li><%= link_to adie_path(adie.id) do %></li>
+              <% if adie.adie_image != nil %>
+                <%= image_tag("adies/#{adie.adie_image}", class:"adie_photo") %>
+              <% else %>
+                <%= image_tag("adies/placeholder.png", class:"adie_photo") %>
+              <% end %>
+            <% end %>
             <li><%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %></li>
             <li>Cohort <%= adie.cohort %></li>
           </div>

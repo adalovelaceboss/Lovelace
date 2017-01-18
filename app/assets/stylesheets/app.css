@@ -82,6 +82,11 @@ a:visited {
   padding-right: 2%;
 }
 
+.adie_photo {
+  border-radius: 50%;
+  max-height: 200px;
+}
+
 @media (max-width: 550px) {
   .title-bar {
     display: block;

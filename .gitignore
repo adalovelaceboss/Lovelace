@@ -18,7 +18,9 @@
 !/tmp/.keep
 /tmp
 .env
+csvs/*
 .ds_store
+csvs/adies.csv
 test/cassettes/*
 
 # Ignore Byebug command history file.

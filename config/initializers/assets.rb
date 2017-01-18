@@ -13,6 +13,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( foundation.css )
 Rails.application.config.assets.precompile += %w( app.css )
 Rails.application.config.assets.precompile += %w( alphabetical_paginate.js )
+Rails.application.config.assets.precompile += %w( adies.js )
 
 if Rails.env.development?
   require 'webmock'

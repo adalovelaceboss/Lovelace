@@ -186,6 +186,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    rb-readline (0.5.3)
     recursive-open-struct (1.0.2)
     ruby-progressbar (1.8.1)
     safe_yaml (1.0.4)
@@ -262,7 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   alphabetical_paginate
-  better_errors
+  better_errors (~> 2.1, >= 2.1.1)
   binding_of_caller
   brakeman (~> 3.4)
   byebug
@@ -280,6 +281,7 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rails_12factor
   ransack!
+  rb-readline
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

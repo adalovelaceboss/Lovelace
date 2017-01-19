@@ -18,6 +18,7 @@
 !/tmp/.keep
 /tmp
 .env
+csvs/*
 .ds_store
 test/cassettes/*
 

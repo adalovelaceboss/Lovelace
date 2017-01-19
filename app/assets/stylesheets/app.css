@@ -1,18 +1,33 @@
 body {
   font-size: 14pt;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
-h1, h2, h3, h4, p {
-  font-family: "Open Sans", sans-serif !important;
+h1, h2 {
+  color: black;
+  font-weight: bold;
 }
 
-/*section.column {
-  width: 50%;
-}*/
+h3, h4, p, a {
+  color: black;
+}
+
+.menu-text {
+  font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  color: black;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.greeter_text {
+  text-align: center;
+}
 
 .column {
   margin-top: 3%;
-  padding: 3%;
+  padding: 3% !important;
 }
 
 .headline {
@@ -36,7 +51,6 @@ h1, h2, h3, h4, p {
 }
 
 .pagination_bar {
-  margin-top: 2%;
   text-align: center;
   font-weight: bold;
 }
@@ -49,9 +63,56 @@ h1, h2, h3, h4, p {
   display: none;
 }
 
+.top-bar, .top-bar ul, .top-bar li {
+  background-color: white !important;
+}
+
+.top-bar {
+  border-bottom: 2px black solid;
+  width: 100% !important;
+  padding: 1% 0;
+}
+
+.top-bar-left {
+  padding-left: 3%;
+}
+
+.top-bar-right {
+  padding-top: 1%;
+  padding-right: 2%;
+}
+
+.adie_photo {
+  border-radius: 50%;
+  max-height: 200px;
+}
+
+.show_photo {
+  border-radius: 50%;
+  max-height: 25em;
+  padding-top: 5%;
+}
+
+form.button_to{
+  display: inline-block;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.hide-me {
+  display: none;
+}
+
+.bold-me {
+  /*border: 2px solid;*/
+  /*border-color: #114e48;*/
+  font-weight: bold;
+}
+
 @media (max-width: 550px) {
   .title-bar {
     display: block;
+    background-color: #114e48 !important;
   }
 
   .top-bar-left {

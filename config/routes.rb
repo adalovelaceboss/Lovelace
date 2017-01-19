@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :adies
 
-  get 'adies' => 'adies#search'
+  get 'adies' => 'adies#search', as: 'search_adies'
 
   resources :employees
 

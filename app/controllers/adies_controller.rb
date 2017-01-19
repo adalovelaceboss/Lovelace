@@ -1,9 +1,22 @@
 class AdiesController < ApplicationController
-  # before_action :require_authentication!
+  before_action :require_authentication!
   before_action :find_adie, only: [:show, :edit, :update]
+  before_filter :set_search
 
   def index
-    @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+    # @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+
+    if !params[:commit].nil? && params[:commit].downcase == "search"
+      if !params[:q].blank?
+        @results = Adie.search(params[:q])
+      else
+        @results = Adie.search({:id_eq => 0})
+      end
+        @adies = @results.result
+        @adies, @alphaParams = @adies.alpha_paginate(params[:letter]){|adie| adie.first_name + adie.last_name}
+    else
+      @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
+    end
   end
 
   def show; end
@@ -35,9 +48,6 @@ class AdiesController < ApplicationController
     end
   end
 
-  def search()
-  end
-
   def destroy
     Adie.destroy(params[:id])
     redirect_to adies_path
@@ -46,7 +56,7 @@ class AdiesController < ApplicationController
 private
 
   def adie_params
-    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company, :query)
+    params.require(:adie).permit(:first_name, :last_name, :cohort, :email, :pref_pronouns, :twitter_handle, :linkedin, :github_username, :internship_company, :current_company, :q)
     # SHOULD USE when passing a hash to any of those methods, do this to prevent injection risks
   end
 

@@ -25,10 +25,12 @@ gem 'brakeman', '~> 3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-gem 'jquery-turbolinks', '~> 2.1'
+# gem 'turbolinks', '~> 5'
+# gem 'jquery-turbolinks', '~> 2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Searching like a boss
+gem 'ransack'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -41,7 +43,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
-  gem 'better_errors'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'binding_of_caller'
   gem 'minitest-vcr'
   gem 'pry'
@@ -62,6 +64,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rb-readline'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

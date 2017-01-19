@@ -29,24 +29,20 @@
         </div>
         <div class="top-bar-right">
           <ul class="dropdown vertical medium-horizontal menu">
-            <%# if ! signed_in? %>
+            <% if ! signed_in? %>
+              <li><%= link_to "Companies", companies_path %></li>
+              <li class="menu-text"><%= button_to "Log in", login_path, class: 'button' %></li>
+            <% end %>
+
+            <% if signed_in? %>
               <li><%= link_to "Companies", companies_path %></li>
               <li><%= link_to "Adies", adies_path %></li>
               <li><%= link_to "Staff", employees_path %></li>
-              <!-- Remove these last two once styling is complete and API can be turned back on -->
-            <%# end %>
-
-            <%# if signed_in? %>
-
-              <!-- <li class="menu-text">Hello, <%# current_account.given_name %>!</li>
-              <li><%# button_to "Log out", logout_path, method: :post, class: 'button' %></li> -->
-            <%# end %>
-            <li class="menu-text"><input type="search" placeholder="Not working yet"></li>
-            <li class="menu-text"><button type="button" class="button">Search</button></li>
-
-            <%# if ! signed_in? %>
-              <li class="menu-text"><%= button_to "Log in", login_path, class: 'button' %></li>
-            <%# end %>
+              <li class="menu-text"><input type="search" placeholder="Not working yet"></li>
+              <li class="menu-text"><button type="button" class="button">Search</button></li>
+              <li class="menu-text">Hello, <%# current_account.given_name %>!</li>
+              <li><%= button_to "Log out", logout_path, method: :post, class: 'button' %></li>
+            <% end %>
           </ul>
         </div>
       </div>

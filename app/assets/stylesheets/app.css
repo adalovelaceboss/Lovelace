@@ -3,18 +3,18 @@ body {
   font-family: 'Open Sans', sans-serif !important;
 }
 
-h1, h2, h3, h4, p {
-  color: #114e48;
+h1, h2 {
+  color: black;
   font-weight: bold;
 }
 
-a {
+h3, h4, p, a {
   color: black;
 }
 
 .menu-text {
   font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  color: #114e48;
+  color: black;
 }
 
 a:visited {
@@ -85,6 +85,28 @@ a:visited {
 .adie_photo {
   border-radius: 50%;
   max-height: 200px;
+}
+
+.show_photo {
+  border-radius: 50%;
+  max-height: 25em;
+  padding-top: 5%;
+}
+
+form.button_to{
+  display: inline-block;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.hide-me {
+  display: none;
+}
+
+.bold-me {
+  /*border: 2px solid;*/
+  /*border-color: #114e48;*/
+  font-weight: bold;
 }
 
 @media (max-width: 550px) {

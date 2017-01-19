@@ -13,6 +13,7 @@ class AdiesController < ApplicationController
         @results = Adie.search({:id_eq => 0})
       end
         @adies = @results.result
+        @adies, @alphaParams = @adies.alpha_paginate(params[:letter]){|adie| adie.first_name + adie.last_name}
     else
       @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
     end

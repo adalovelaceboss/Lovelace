@@ -27,7 +27,7 @@ a:visited {
 
 .column {
   margin-top: 3%;
-  padding: 3% !important;
+  padding: 1%;
 }
 
 .headline {
@@ -53,6 +53,8 @@ a:visited {
 .pagination_bar {
   text-align: center;
   font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: -2%;
 }
 
 .show_buttons {

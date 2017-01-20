@@ -57,11 +57,6 @@ a:visited {
   margin-bottom: -2%;
 }
 
-/*.sticky-container {
-  position: fixed;
-  width: 100%;
-}*/
-
 .show_buttons {
   text-align: center;
 }
@@ -148,6 +143,7 @@ footer p {
   .title-bar {
     display: block;
     background-color: #114e48 !important;
+    
   }
 
   .top-bar-left {

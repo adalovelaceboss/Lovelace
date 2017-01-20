@@ -39,7 +39,7 @@
   $("#adie_search input").keypress(function(event) {
     if (event.which == 13) {
       event.preventDefault();
-        $("#adie_search").submit({name: "commit", value: "search"});
+        $("#adie_search").submit([name: "commit", value: "search"]);
      }
   });
 </script>

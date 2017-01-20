@@ -57,6 +57,11 @@ a:visited {
   margin-bottom: -2%;
 }
 
+/*.sticky-container {
+  position: fixed;
+  width: 100%;
+}*/
+
 .show_buttons {
   text-align: center;
 }

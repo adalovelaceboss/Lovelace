@@ -1,9 +1,10 @@
-<div class="social-area col-xs-12 col-sm-4">
+<div class="social-area col-xs-12 col-sm-6">
   <div class="header">
     &nbsp;
   </div>
 
-  <label>Easy 1-click login:</label>
+  <h3 class="logintext">Login</h3>
+  <h4 class="logintext">Staff:</h4>
 
   <% if Stormpath::Rails.config.web.facebook_app_id %>
     <%= link_to 'Facebook', facebook_oauth_url, class: 'btn btn-social btn-facebook' %>
@@ -12,6 +13,8 @@
   <% if Stormpath::Rails.config.web.google_app_id %>
     <%= link_to 'Google', google_oauth_url, class: 'btn btn-social btn-google' %>
   <% end %>
+
+  <h4 class="logintext">Students/Alumni:</h4>
 
   <% if Stormpath::Rails.config.web.linkedin_app_id %>
     <%= link_to 'LinkedIn', linkedin_oauth_url, class: 'btn btn-social btn-linkedin' %>

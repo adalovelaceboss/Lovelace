@@ -105,10 +105,38 @@ form.button_to{
   display: none;
 }
 
+/*.adie_search {
+  float: center !important;
+}*/
+
 .bold-me {
-  /*border: 2px solid;*/
+  border: 1px solid black;
   /*border-color: #114e48;*/
   font-weight: bold;
+  text-align: center;
+}
+
+form {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.social-area {
+  align-content: center;
+}
+
+.logintext {
+  text-align: center;
+}
+
+.logintext h3 {
+  padding-bottom: 5%;
+}
+
+footer p {
+  margin: 4% 0 2%;
+  text-align: center;
 }
 
 @media (max-width: 550px) {
@@ -119,5 +147,8 @@ form.button_to{
 
   .top-bar-left {
     display: none;
+  }
+
+  .pagination_bar {
   }
 }

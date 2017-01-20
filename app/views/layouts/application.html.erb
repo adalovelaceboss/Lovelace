@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= favicon_link_tag 'favicon2.ico' %>
 
     <title><%= content_for?(:title) ? yield(:title) : "Lovelace" %></title>
 
@@ -38,9 +39,7 @@
               <li><%= link_to "Companies", companies_path %></li>
               <li><%= link_to "Adies", adies_path %></li>
               <li><%= link_to "Staff", employees_path %></li>
-              <li class="menu-text"><input type="search" placeholder="Not working yet"></li>
-              <li class="menu-text"><button type="button" class="button">Search</button></li>
-              <li class="menu-text">Hello, <%= current_account.given_name %>!</li>
+              <li class="menu-text">Welcome, <%= current_account.given_name %>!</li>
               <li><%= button_to "Log out", logout_path, method: :post, class: 'button' %></li>
             <% end %>
           </ul>
@@ -50,5 +49,8 @@
 
     <%= yield %>
 
+  <footer>
+    <p>&copy; 2016 Elle Vargas</p>
+  </footer>
   </body>
 </html>

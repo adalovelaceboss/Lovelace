@@ -1,1 +1,5 @@
-
+<% if flash[:error] %>
+  <div class="alert alert-danger bad-login">
+    <p><%= flash.now[:error] %></p>
+  </div>
+<% end %>

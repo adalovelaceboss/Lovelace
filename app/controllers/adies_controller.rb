@@ -1,5 +1,6 @@
 class AdiesController < ApplicationController
   before_action :require_authentication!
+  # before_action :require_login
   before_action :find_adie, only: [:show, :edit, :update]
   before_filter :set_search
 
@@ -62,10 +63,6 @@ private
 
   def find_adie
     @adie = Adie.find(params[:id])
-    # if !@adie || !@user.tasks.include?(@mytask)
-    #   flash[:notice] = "Sorry, that is not one of your tasks."
-    #   redirect_to root_path
-    # end
   end
 
 end

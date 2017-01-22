@@ -105,10 +105,6 @@ form.button_to{
   display: none;
 }
 
-/*.adie_search {
-  float: center !important;
-}*/
-
 .bold-me {
   border: 1px solid black;
   /*border-color: #114e48;*/
@@ -143,7 +139,7 @@ footer p {
   .title-bar {
     display: block;
     background-color: #114e48 !important;
-    
+
   }
 
   .top-bar-left {

@@ -7,4 +7,20 @@ class ApplicationController < ActionController::Base
    @search_company = Company.search(params[:q])
   #  @search_staff = Staff.search(params[:q])
   end
+
+  # def require_login
+  #   byebug
+  #   require_authentication!
+  # end
+
+  def signed_in?
+    return false if ! current_account.present?
+    adie = Adie.find_by(github_username: current_account.username)
+
+    flash[:error] = "You are not in the database and cannot log in. Please contact an administrator at info@adadevelopersacademy.org!" if adie.nil?
+
+    return adie.present?
+
+  end
+
 end

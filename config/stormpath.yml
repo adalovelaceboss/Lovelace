@@ -137,14 +137,14 @@ stormpath:
             visible: false
             label: "Username or Email"
             placeholder: "Username or Email"
-            required: true
+            required: false
             type: "text"
           password:
             enabled: false
             visible: false
             label: "Password"
             placeholder: "Password"
-            required: true
+            required: false
             type: "password"
         fieldOrder:
           - "login"

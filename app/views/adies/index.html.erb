@@ -19,7 +19,7 @@
   <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
     <% if @adies != nil %>
       <% @adies.each do |adie| %>
-      <section class="column">
+        <section class="column">
           <div class="headline">
             <li><%= link_to adie_path(adie.id) do %></li>
               <% if adie.adie_image != nil %>
@@ -31,12 +31,12 @@
             <li><%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %></li>
             <li>Cohort <%= adie.cohort %></li>
           </div>
-      </section>
+        </section>
       <% end %>
   </div>
-  <% else %>
-    <h3>We found no Adies matching your search.</h3>
-  <% end %>
+    <% else %>
+      <h3>We found no Adies matching your search.</h3>
+    <% end %>
 </div>
 
 <script>

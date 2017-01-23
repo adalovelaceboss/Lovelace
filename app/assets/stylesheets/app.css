@@ -95,6 +95,16 @@ a:visited {
   padding-top: 5%;
 }
 
+.staff_photo {
+  border-radius: 50%;
+  max-height: 50em;
+  padding-top: 5%;
+}
+
+.co_logo {
+  padding: 0 10% 0;
+}
+
 form.button_to{
   display: inline-block;
   margin-top: 3%;

@@ -13,9 +13,8 @@
       <section class="column">
           <div class="headline">
             <%= link_to company_path(company.id) do %>
-              <%= image_tag("logos/#{company.logo}") %>
+              <%= image_tag("logos/#{company.logo}", class: "co_logo") %>
             <% end %>
-            <li><%= company.city + ", " + company.state %></li>
           </div>
       </section>
       <% end %>

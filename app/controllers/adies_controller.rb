@@ -1,7 +1,8 @@
 class AdiesController < ApplicationController
   before_action :require_authentication!
   # before_action :require_login
-  before_action :find_adie, only: [:show, :edit, :update]
+  before_action :find_adie, only: [:show, :edit, :update, :can_edit]
+  before_action :can_edit, only: [:edit, :update]
   before_filter :set_search
 
   def index
@@ -63,6 +64,15 @@ private
 
   def find_adie
     @adie = Adie.find(params[:id])
+  end
+
+  def can_edit
+    # find_adie
+    if current_account.username == @adie.github_username
+      return true
+    else
+      false
+    end
   end
 
 end

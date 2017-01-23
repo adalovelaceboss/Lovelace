@@ -16,8 +16,11 @@ class ApplicationController < ActionController::Base
   def signed_in?
     return false if ! current_account.present?
     adie = Adie.find_by(github_username: current_account.username)
+    # domain = "@adadevelopersacademy.org"
+    # staff = Employee.where("email like ?", "%#{domain}")
 
-    flash[:error] = "You are not in the database and cannot log in. Please contact an administrator at info@adadevelopersacademy.org!" if adie.nil?
+    flash[:notice] = "You are not in the database and cannot log in. Please contact an administrator at info@adadevelopersacademy.org!" if adie.nil?
+    # || if staff.nil?
 
     return adie.present?
 

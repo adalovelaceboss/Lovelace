@@ -14,13 +14,13 @@
           <div class="headline">
             <li><%= link_to employee_path(employee.id) do %></li>
               <% if employee.staff_image != nil %>
-                <%= image_tag("employees/#{employee.staff_image}") %>
+                <%= image_tag("employees/#{employee.staff_image}", class:"adie_photo") %>
               <% else %>
                 <%= image_tag("adies/placeholder.png", class:"adie_photo") %>
               <% end %>
             <% end %>
             <li><%= link_to employee.first_name + " " + employee.last_name, employee_path(employee.id) %></li>
-            <li><%= employee.job_title %></li>
+            <li><h5><%= employee.job_title %></h5></li>
           </div>
         </section>
       <% end %>

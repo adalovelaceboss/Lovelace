@@ -11,11 +11,15 @@
 
       <% if @adie.github_username != nil %>
         <h3> Github Username: <%= link_to @adie.github_username, "https://github.com/#{@adie.github_username}", target: '_blank' %> </h3>
+      <% else %>
+        <h3>Github Username:</h3>
       <% end %>
       <% if  @adie.twitter_handle != nil%>
         <h3> Twitter Handle: <%= link_to @adie.twitter_handle, "https://twitter.com/#{@adie.twitter_handle}", target: '_blank' %> </h3>
+      <% else %>
+        <h3>Twitter Handle:</h3>
       <% end %>
-      
+
       <h3> Linkedin: <%= link_to @adie.linkedin, "#{@adie.linkedin}", target: '_blank' %> </h3>
       <h3> Internship Company: <%= @adie.internship_company %> </h3>
       <h3> Currently At: <%= @adie.current_company %> </h3>

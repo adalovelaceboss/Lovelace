@@ -216,7 +216,7 @@ stormpath:
     # the current user object.  The developer can opt-in to expanding account
     # resources on this enpdoint.
     me:
-      enabled: true
+      enabled: false
       uri: "/me"
       expand:
         apiKeys: false

@@ -4,6 +4,12 @@
     <%# byebug (.email and .username) %>
   <%# end %>
 
+  <div class="welcome-text">
+    <div class="row">
+      <h2>Our Developers</h2>
+    </div>
+  </div>
+
   <div class="row">
     <div class="column">
       <div class="adie_search">
@@ -12,8 +18,11 @@
           <%= f.submit "", value: "search", class: "hide-me"%>
         <% end %>
       </div>
-        <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
     </div>
+  </div>
+
+  <div class="row">
+    <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
   </div>
 
   <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">

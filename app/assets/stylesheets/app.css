@@ -7,6 +7,7 @@ h1, h2 {
   color: black;
   font-weight: bold;
   text-align: center;
+  font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
 }
 
 h3, h4, p, a {
@@ -54,8 +55,8 @@ a:visited {
 .pagination_bar {
   text-align: center;
   font-weight: bold;
-  margin-top: 5%;
-  margin-bottom: -2%;
+  margin-top: 1%;
+  margin-bottom: -4%;
 }
 
 .show_buttons {
@@ -66,8 +67,8 @@ a:visited {
   display: none;
 }
 
-.top-bar, .top-bar ul, .top-bar li {
-  background-color: white !important;
+.top-bar, .top-bar ul, .top-bar li, .top-bar a, .top-bar h1 {
+  background-color: rgba(255,255,255,0.9) !important;
 }
 
 .top-bar {
@@ -144,6 +145,16 @@ form {
 .button:hover, .button:focus {
   background-color: #114e48
 
+}
+
+.welcome-text {
+  background-color: #114e48;
+  width: 100%;
+}
+
+.welcome-text h2 {
+  color: white;
+  padding: 2% 0;
 }
 
 footer p {

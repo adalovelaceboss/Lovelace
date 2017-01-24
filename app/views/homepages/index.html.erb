@@ -1,5 +1,11 @@
 <%= image_tag("splash-image.PNG", id: "splash-img")%>
 
+<div class="welcome-text">
+  <div class="row">
+      <h2>Ada Developers Academy Official Alumni Resource</h2>
+  </div>
+</div>
+
 <% if flash[:notice] %>
   <div class="alert alert-danger bad-login">
     <p><%= flash[:notice] %></p>

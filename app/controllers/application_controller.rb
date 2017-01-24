@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def set_search
    @search_adie = Adie.search(params[:q])
    @search_company = Company.search(params[:q])
-  #  @search_staff = Staff.search(params[:q])
+   @search_employee = Employee.search(params[:q])
   end
 
   # def require_login

@@ -59,15 +59,11 @@ a:visited {
   margin-bottom: -4%;
 }
 
-.show_buttons {
-  text-align: center;
-}
-
 .title-bar {
   display: none;
 }
 
-.top-bar, .top-bar ul, .top-bar li, .top-bar a, .top-bar h1 {
+.top-bar, .top-bar ul, .top-bar li, .top-bar a .top-bar h1 {
   background-color: rgba(255,255,255,0.9) !important;
 }
 
@@ -101,12 +97,6 @@ a:visited {
   padding: 0 10% 0;
 }
 
-form.button_to{
-  display: inline-block;
-  margin-top: 3%;
-  margin-right: 5%;
-}
-
 .hide-me {
   display: none;
 }
@@ -134,6 +124,12 @@ form {
 
 .logintext h3 {
   padding-bottom: 5%;
+}
+
+form.button_to{
+  display: inline-block;
+  margin-top: 3%;
+  margin-right: 5%;
 }
 
 .button {

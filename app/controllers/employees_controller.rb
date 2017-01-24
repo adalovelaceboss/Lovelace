@@ -1,10 +1,20 @@
 class EmployeesController < ApplicationController
   # before_action :require_authentication!
   before_action :find_employee, only: [:show, :edit, :update]
-  # before_filter :set_search
+  before_filter :set_search
 
   def index
-    @employees, @alphaParams = Employee.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|employee| employee.first_name}
+    if !params[:commit].nil? && params[:commit].downcase == "search"
+      if !params[:q].blank?
+        @results = Employee.search(params[:q])
+      else
+        @results = Employee.search({:id_eq => 0})
+      end
+        @employees = @results.result
+        @employees, @alphaParams = @employees.alpha_paginate(params[:letter]){|employee| employee.first_name + employee.last_name}
+    else
+      @employees, @alphaParams = Employee.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|employee| employee.first_name + employee.last_name}
+    end
   end
 
   def show; end

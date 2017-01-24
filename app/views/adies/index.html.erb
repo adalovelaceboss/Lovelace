@@ -8,7 +8,7 @@
     <div class="column">
       <div class="adie_search">
         <%= search_form_for @search_adie do |f| %>
-          <%= f.search_field :cohort_or_internship_company_or_first_name_or_last_name_cont, placeholder: "Search for something and hit enter!", class: "bold-me"%>
+          <%= f.search_field :cohort_or_internship_company_or_first_name_or_last_name_or_current_company_cont, placeholder: "Search for something and hit enter!", class: "bold-me"%>
           <%= f.submit "", value: "search", class: "hide-me"%>
         <% end %>
       </div>

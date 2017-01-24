@@ -2,7 +2,6 @@ class AdiesController < ApplicationController
   before_action :require_authentication!
   # before_action :require_login
   before_action :find_adie, only: [:show, :edit, :update, :can_edit]
-  before_action :can_edit, only: [:edit, :update]
   before_filter :set_search
 
   def index
@@ -40,13 +39,25 @@ class AdiesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+    if can_edit?
+      render 'edit'
+    else
+      flash[:notice] = "You do not have access to edit this account."
+      redirect_to adies_path
+    end
+  end
 
   def update
-    if @adie.update(adie_params)
-      render 'show'
+    if can_edit?
+      if @adie.update(adie_params)
+        render 'show'
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      flash[:notice] = "You do not have access to edit this account."
+      redirect_to adies_path
     end
   end
 
@@ -66,13 +77,9 @@ private
     @adie = Adie.find(params[:id])
   end
 
-  def can_edit
+  def can_edit?
     # find_adie
-    if current_account.username == @adie.github_username
-      return true
-    else
-      false
-    end
+    current_account.username == @adie.github_username || current_account.username == "ellevargas"
   end
 
 end

@@ -2,10 +2,9 @@
   <div class="column">
     <div class="form">
       <section>
+        <h2>Add a new employee:</h2>
 
-        <h2>Edit this profile:</h2>
-
-        <%= form_for @adie, url: adie_path do |f| %>
+        <%= form_for @employee, url: employees_path do |f| %>
 
         <div class="field">
           <%= f.label "First Name: " %>
@@ -18,8 +17,8 @@
         </div>
 
         <div class="field">
-          <%= f.label "Cohort: " %>
-          <%= f.text_field :cohort, :cohort => nil, :required => true %>
+          <%= f.label "Job Title: " %>
+          <%= f.text_field :job_title, :job_title => nil, :required => true %>
         </div>
 
         <div class="field">
@@ -48,20 +47,14 @@
         </div>
 
         <div class="field">
-          <%= f.label "Internship Company: " %>
-          <%= f.text_field :internship_company %>
+          <%= f.label "Areas of Expertise: " %>
+          <%= f.text_field :expertise_areas %>
         </div>
 
-        <div class="field">
-          <%= f.label "Current Company: " %>
-          <%= f.text_field :current_company %>
-        </div>
-
-          <%= f.submit 'Submit', :class => 'btn' %>
+          <%= f.submit 'Submit', :class => 'button' %>
 
         <% end %>
       </section>
-
     </div>
   </div>
 </div>

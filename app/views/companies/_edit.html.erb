@@ -1,53 +1,55 @@
-<div class="form">
-  <section>
+<div class="row">
+  <div class="column">
+    <div class="form">
+      <section>
+        <h2>Edit this company profile:</h2>
 
-    <h2>Add a new company:</h2>
+        <%= form_for @company, url: company_path do |f| %>
 
-    <%= form_for @company, url: company_path do |f| %>
+        <div class="field">
+          <%= f.label "Company Name: " %>
+          <%= f.text_field :company_name, :company_name => nil, :required => true %>
+        </div>
 
-    <div class="field">
-      <%= f.label "Company Name: " %>
-      <%= f.text_field :company_name, :company_name => nil, :required => true %>
+        <div class="field">
+          <%= f.label "Address: " %>
+          <%= f.text_field :address, :address => nil, :required => true %>
+        </div>
+
+        <div class="field">
+          <%= f.label "City: " %>
+          <%= f.text_field :city, :city => nil, :required => true %>
+        </div>
+
+        <div class="field">
+          <%= f.label "State: " %>
+          <%= f.text_field :state, :state => nil, :required => true %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Zip Code: " %>
+          <%= f.text_field :zip_code, :zip_code => nil, :required => true %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Field of Business: " %>
+          <%= f.text_field :business_field %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Website: " %>
+          <%= f.text_field :website %>
+        </div>
+
+        <!-- <div class="field">
+          <%# f.label "Upload Logo - needs work: " %>
+          <%# f.text_field :logo %>
+        </div> -->
+
+          <%= f.submit 'Submit', :class => 'button' %>
+
+        <% end %>
+      </section>
     </div>
-
-    <div class="field">
-      <%= f.label "Address: " %>
-      <%= f.text_field :address, :address => nil, :required => true %>
-    </div>
-
-    <div class="field">
-      <%= f.label "City: " %>
-      <%= f.text_field :city, :city => nil, :required => true %>
-    </div>
-
-    <div class="field">
-      <%= f.label "State: " %>
-      <%= f.text_field :state, :state => nil, :required => true %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Zip Code: " %>
-      <%= f.text_field :zip_code, :zip_code => nil, :required => true %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Field of Business: " %>
-      <%= f.text_field :business_field %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Website: " %>
-      <%= f.text_field :website %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Upload Logo - needs work: " %>
-      <%= f.text_field :logo %>
-    </div>
-
-      <%= f.submit 'Submit', :class => 'btn' %>
-
-    <% end %>
-  </section>
-
+  </div>
 </div>

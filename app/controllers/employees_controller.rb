@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :require_authentication!
+  # before_action :require_authentication!
   before_action :find_employee, only: [:show, :edit, :update]
   # before_filter :set_search
 

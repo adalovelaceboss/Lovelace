@@ -1,12 +1,9 @@
 class AdiesController < ApplicationController
-  before_action :require_authentication!
-  # before_action :require_login
+  # before_action :require_authentication!
   before_action :find_adie, only: [:show, :edit, :update, :can_edit]
   before_filter :set_search
 
   def index
-    # @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
-
     if !params[:commit].nil? && params[:commit].downcase == "search"
       if !params[:q].blank?
         @results = Adie.search(params[:q])

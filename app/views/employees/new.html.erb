@@ -3,8 +3,8 @@
 <div class="row">
   <div class="column">
     <section>
-      <h2>Upload multiple employees via CSV:</h2>
       <%= form_tag({action: :create}, multipart: true) do %>
+        <h2>Upload multiple employees via CSV:</h2>
         <%= file_field_tag :file %>
         <h5>Note: Please ensure your file does not have headers.</h5>
         <%= button_to "Import", {controller: 'employees', method: 'post'}, class: "button" %>

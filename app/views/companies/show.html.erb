@@ -1,13 +1,13 @@
 <section>
   <div class="row small-up-1 large-up-2">
-    <section class="column">
+    <section class="column center-show">
       <%= image_tag("logos/#{@company.logo}", class: "show_logo") %>
     </section>
     <section class="column">
       <h2> <%= @company.company_name %> </h2>
       <h3> <%= @company.address %> </h3>
       <h3> <%= "#{@company.city}, #{@company.state} #{@company.zip_code}" %> </h3>
-      <h3> What they do: <%= @company.business_field %> </h3>
+      <h3> Field: <%= @company.business_field %> </h3>
       <h3> <%= link_to @company.website, "#{@company.website}", target: '_blank' %> </h3>
 
       <%= button_to "Edit Company", {action: "edit", id: @company.id}, method: :get, :class => 'button' %>

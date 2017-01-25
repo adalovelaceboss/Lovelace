@@ -18,7 +18,6 @@ body {
 h1, h2 {
   color: black;
   font-weight: bold;
-  text-align: center;
   font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;
 }
 
@@ -43,9 +42,25 @@ a:hover, a:focus {
   text-align: center;
 }
 
+.image-container {
+  width: 100%;
+}
+
+.splash-image {
+  min-width: 100vw;
+}
+
+.row {
+  max-width: 80%;
+}
+
 .column {
-  margin-top: 3%;
-  padding: 1%;
+  margin-top: 1%;
+  padding: 3%;
+}
+
+.center-show {
+  text-align: center;
 }
 
 .headline {
@@ -115,7 +130,7 @@ a:hover, a:focus {
 }
 
 .co_logo {
-  padding: 0 10% 0;
+  padding: 0 5% 0;
 }
 
 .hide-me {
@@ -130,9 +145,13 @@ a:hover, a:focus {
 }
 
 form {
-  max-width: 60%;
+  max-width: 80%;
   display: block;
   margin: 0 auto;
+}
+
+label {
+  font-size: 1.15rem;
 }
 
 form.button_to{
@@ -159,6 +178,7 @@ form.button_to{
 .welcome-text h2 {
   color: white;
   padding: 2% 0;
+  text-align: center;
 }
 
 .admin-buttons {

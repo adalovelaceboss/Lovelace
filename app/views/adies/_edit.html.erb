@@ -3,9 +3,8 @@
     <div class="form">
       <section>
 
-        <h2>Edit this profile:</h2>
-
         <%= form_for @adie, url: adie_path do |f| %>
+        <h2>Edit this profile:</h2>
 
         <div class="field">
           <%= f.label "First Name: " %>
@@ -57,7 +56,7 @@
           <%= f.text_field :current_company %>
         </div>
 
-          <%= f.submit 'Save', :class => 'btn' %>
+          <%= f.submit 'Save', :class => 'button' %>
 
         <% end %>
       </section>

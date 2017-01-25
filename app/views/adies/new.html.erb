@@ -1,10 +1,14 @@
 <%= render partial: "new", locals: {action_name: "create"} %>
 
-<section>
-  <h2>Upload multiple Adies via CSV:</h2>
-  <h4>Note: Please ensure your file does not have headers.</h4>
-  <%= form_tag({action: :create}, multipart: true) do %>
-    <%= file_field_tag :file %>
-    <%= button_to "Import", { controller: 'adies', method: 'post'} %>
-  <% end %>
-</section>
+<div class="row">
+  <div class="column">
+    <section>
+      <h2>Upload multiple Adies via CSV:</h2>
+      <%= form_tag({action: :create}, multipart: true) do %>
+        <%= file_field_tag :file %>
+        <h5>Note: Please ensure your file does not have headers.</h5>
+        <%= button_to "Import", {controller: 'adies', method: 'post'}, class: "button" %>
+      <% end %>
+    </section>
+  </div>
+</div>

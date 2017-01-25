@@ -4,24 +4,33 @@
     <%# byebug (.email and .username) %>
   <%# end %>
 
+  <div class="welcome-text">
+    <div class="row">
+      <h2>Our Developers</h2>
+    </div>
+  </div>
+
   <div class="row">
     <div class="column">
-      <div class="adie_search">
+      <div class="search-bar">
         <%= search_form_for @search_adie do |f| %>
-          <%= f.search_field :cohort_or_internship_company_or_first_name_or_last_name_cont, placeholder: "Search for something and hit enter!", class: "bold-me"%>
+          <%= f.search_field :cohort_or_first_name_or_last_name_or_email_or_twitter_handle_or_linkedin_or_github_username_or_internship_company_or_current_company_cont, placeholder: "Type your search here and hit enter", class: "bold-me"%>
           <%= f.submit "", value: "search", class: "hide-me"%>
         <% end %>
       </div>
-        <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
     </div>
+  </div>
+
+  <div class="row">
+    <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
   </div>
 
   <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
     <% if @adies != nil %>
       <% @adies.each do |adie| %>
-      <section class="column">
+        <section class="column">
           <div class="headline">
-            <li><%= link_to adie_path(adie.id) do %></li>
+            <%= link_to adie_path(adie.id) do %>
               <% if adie.adie_image != nil %>
                 <%= image_tag("adies/#{adie.adie_image}", class:"adie_photo") %>
               <% else %>
@@ -29,21 +38,21 @@
               <% end %>
             <% end %>
             <li><%= link_to adie.first_name + " " + adie.last_name, adie_path(adie.id) %></li>
-            <li>Cohort <%= adie.cohort %></li>
+            <li><h5>Cohort <%= adie.cohort %></h5></li>
           </div>
-      </section>
+        </section>
       <% end %>
   </div>
-  <% else %>
-    <h3>We found no Adies matching your search.</h3>
-  <% end %>
+    <% else %>
+      <h3>We found no Adies matching your search.</h3>
+    <% end %>
 </div>
 
 <script>
-  $("#adie_search input").keypress(function(event) {
+  $("#search-bar input").keypress(function(event) {
     if (event.which == 13) {
       event.preventDefault();
-        $("#adie_search").submit([name: "commit", value: "search"]);
+        $("#search-bar").submit([name: "commit", value: "search"]);
      }
   });
 </script>

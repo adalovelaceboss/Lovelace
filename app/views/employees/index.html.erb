@@ -1,2 +1,54 @@
-<h1>Employees#index</h1>
-<p>Find me in app/views/employees/index.html.erb</p>
+<div class="basic">
+
+  <div class="welcome-text">
+    <div class="row">
+      <h2>Our Team</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="search-bar">
+        <%= search_form_for @search_employee do |f| %>
+          <%= f.search_field :job_title_or_first_name_or_last_name_or_email_or_twitter_handle_or_linkedin_or_github_username_or_expertise_areas_cont, placeholder: "Type your search here and hit enter", class: "bold-me"%>
+          <%= f.submit "", value: "search", class: "hide-me"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4 class="pagination_bar">Sort by First Name: <%= alphabetical_paginate @alphaParams %></h4>
+  </div>
+
+  <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
+    <% if @employees != nil %>
+      <% @employees.each do |employee| %>
+        <section class="column">
+          <div class="headline">
+            <%= link_to employee_path(employee.id) do %>
+              <% if employee.staff_image != nil %>
+                <%= image_tag("employees/#{employee.staff_image}", class:"adie_photo") %>
+              <% else %>
+                <%= image_tag("adies/placeholder.png", class:"adie_photo") %>
+              <% end %>
+            <% end %>
+            <li><%= link_to employee.first_name + " " + employee.last_name, employee_path(employee.id) %></li>
+            <li><h5><%= employee.job_title %></h5></li>
+          </div>
+        </section>
+      <% end %>
+  </div>
+    <% else %>
+      <h3>We found no employees matching your search.</h3>
+    <% end %>
+</div>
+
+<script>
+  $("#search-bar input").keypress(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+        $("#search-bar").submit([name: "commit", value: "search"]);
+     }
+  });
+</script>

@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   get 'homepages/index'
 
-  resources :adies
+  get 'admins/index'
 
-  get 'adies' => 'adies#search', as: 'search_adies'
+  resources :adies
 
   resources :employees
 

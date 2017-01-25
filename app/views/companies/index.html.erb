@@ -1,11 +1,26 @@
 <div class="basic">
 
-  <div class="row">
-    <div class="column">
-      <h2 class="greeter_text">Meet our sponsors!</h2>
-      <h4 class="pagination_bar">Sort by Company Name: <%= alphabetical_paginate @alphaParams %></h4>
+  <div class="welcome-text">
+    <div class="row">
+      <h2>Our Sponsors</h2>
     </div>
   </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="search-bar">
+        <%= search_form_for @search_company do |f| %>
+          <%= f.search_field :company_name_or_address_or_city_or_state_or_zip_code_or_business_field_or_website_cont, placeholder: "Type your search here and hit enter", class: "bold-me"%>
+          <%= f.submit "", value: "search", class: "hide-me"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4 class="pagination_bar">Sort by Company Name: <%= alphabetical_paginate @alphaParams %></h4>
+  </div>
+
 
   <div class="row small-up-1 medium-up-3 large-up-4" id="pagination_table">
     <% if @companies != nil %>
@@ -13,9 +28,8 @@
       <section class="column">
           <div class="headline">
             <%= link_to company_path(company.id) do %>
-              <%= image_tag("logos/#{company.logo}") %>
+              <%= image_tag("logos/#{company.logo}", class: "co_logo") %>
             <% end %>
-            <li><%= company.city + ", " + company.state %></li>
           </div>
       </section>
       <% end %>
@@ -24,3 +38,12 @@
     <h3>We found no companies matching your search.</h3>
   <% end %>
 </div>
+
+<script>
+  $("#search-bar input").keypress(function(event) {
+    if (event.which == 13) {
+      event.preventDefault();
+        $("#search-bar").submit([name: "commit", value: "search"]);
+     }
+  });
+</script>

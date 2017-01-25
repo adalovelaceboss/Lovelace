@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_action :require_authentication!
   before_action :find_company, only: [:show, :edit, :update]
   before_filter :set_search
 

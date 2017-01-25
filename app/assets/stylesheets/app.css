@@ -35,6 +35,11 @@ a:visited {
   color: inherit;
 }
 
+a:hover, a:focus {
+  text-decoration: underline;
+  color: #114e48;
+}
+
 .greeter_text {
   text-align: center;
 }

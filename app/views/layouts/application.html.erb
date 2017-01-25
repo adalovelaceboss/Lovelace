@@ -22,7 +22,7 @@
         <button class="menu-icon" type="button" data-toggle></button>
         <div class="title-bar-title"><%= link_to "Lovelace", root_path%></div>
       </div>
-      
+
       <div class="top-bar" id="top-menu" data-sticky data-options="marginTop:0;">
         <div class="top-bar-left">
           <ul class="dropdown vertical medium-horizontal menu">
@@ -31,19 +31,20 @@
         </div>
         <div class="top-bar-right">
           <ul class="dropdown vertical medium-horizontal menu">
-            <!-- <%# if ! signed_in? %>
-              <li><%# link_to "Ada", "http://adadevelopersacademy.org/", target: '_blank' %></li>
-              <li class="menu-text"><%# button_to "Log in", login_path, class: 'button' %></li>
-            <%# end %> -->
+            <% if ! signed_in? %>
+              <li><%= link_to "Website", "http://adadevelopersacademy.org/", target: '_blank' %></li>
+              <li class="menu-text"><%= button_to "Log in", login_path, class: 'button' %></li>
+            <% end %>
 
-            <%# if signed_in? %>
+            <% if signed_in? %>
+              <li><%= link_to "Admin", admins_index_path %></li>
               <li><%= link_to "Adies", adies_path %></li>
               <li><%= link_to "Staff", employees_path %></li>
               <li><%= link_to "Companies", companies_path %></li>
               <li><%= link_to "Website", "http://adadevelopersacademy.org/", target: '_blank' %></li>
-              <!-- <li class="menu-text">Welcome, <%# current_account.given_name %>!</li> -->
-              <!-- <li><%# button_to "Log out", {logout_path, method: 'post'}, class: 'button' %></li> -->
-            <%# end %>
+              <li class="menu-text">Welcome, <%= current_account.given_name %>!</li>
+              <li><%= button_to "Log out", logout_path, class: 'button' %></li>
+            <% end %>
           </ul>
         </div>
       </div>

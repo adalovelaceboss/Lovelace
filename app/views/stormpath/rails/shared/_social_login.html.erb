@@ -1,27 +1,23 @@
 <div class="social-area col-xs-12 col-sm-6">
-  <div class="header">
-    &nbsp;
-  </div>
 
-  <h3 class="logintext">Login</h3>
-  <h4 class="logintext">Staff:</h4>
+  <h2 class="logintext">Login:</h2>
 
-  <% if Stormpath::Rails.config.web.facebook_app_id %>
-    <%= link_to 'Facebook', facebook_oauth_url, class: 'btn btn-social btn-facebook' %>
-  <% end %>
+  <h3 class="logintext">Staff</h3>
+    <% if Stormpath::Rails.config.web.facebook_app_id %>
+      <%= link_to 'Facebook', facebook_oauth_url, class: 'btn btn-social btn-facebook' %>
+    <% end %>
 
-  <% if Stormpath::Rails.config.web.google_app_id %>
-    <%= link_to 'Google', google_oauth_url, class: 'btn btn-social btn-google' %>
-  <% end %>
+    <% if Stormpath::Rails.config.web.google_app_id %>
+      <%= link_to 'Google', google_oauth_url, class: 'btn btn-social btn-google' %>
+    <% end %>
 
-  <h4 class="logintext">Students/Alumni:</h4>
+  <h3 class="logintext">Adies</h3>
+    <% if Stormpath::Rails.config.web.linkedin_app_id %>
+      <%= link_to 'LinkedIn', linkedin_oauth_url, class: 'btn btn-social btn-linkedin' %>
+    <% end %>
 
-  <% if Stormpath::Rails.config.web.linkedin_app_id %>
-    <%= link_to 'LinkedIn', linkedin_oauth_url, class: 'btn btn-social btn-linkedin' %>
-  <% end %>
-
-  <% if Stormpath::Rails.config.web.github_app_id %>
-    <%= link_to 'GitHub', github_oauth_url, class: 'btn btn-social btn-github' %>
-  <% end %>
+    <% if Stormpath::Rails.config.web.github_app_id %>
+      <%= link_to 'GitHub', github_oauth_url, class: 'btn btn-social btn-github' %>
+    <% end %>
 
 </div>

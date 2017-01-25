@@ -26,7 +26,7 @@
       <% @employees.each do |employee| %>
         <section class="column">
           <div class="headline">
-            <li><%= link_to employee_path(employee.id) do %></li>
+            <%= link_to employee_path(employee.id) do %>
               <% if employee.staff_image != nil %>
                 <%= image_tag("employees/#{employee.staff_image}", class:"adie_photo") %>
               <% else %>

@@ -30,7 +30,7 @@
       <% @adies.each do |adie| %>
         <section class="column">
           <div class="headline">
-            <li><%= link_to adie_path(adie.id) do %></li>
+            <%= link_to adie_path(adie.id) do %>
               <% if adie.adie_image != nil %>
                 <%= image_tag("adies/#{adie.adie_image}", class:"adie_photo") %>
               <% else %>

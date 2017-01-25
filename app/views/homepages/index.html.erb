@@ -1,5 +1,13 @@
-<% if flash[:error] %>
+<%= image_tag("splash-image.PNG", id: "splash-img")%>
+
+<div class="welcome-text">
+  <div class="row">
+      <h2>Ada Developers Academy Alumni Resource</h2>
+  </div>
+</div>
+
+<% if flash[:notice] %>
   <div class="alert alert-danger bad-login">
-    <p><%= flash.now[:error] %></p>
+    <p><%= flash[:notice] %></p>
   </div>
 <% end %>

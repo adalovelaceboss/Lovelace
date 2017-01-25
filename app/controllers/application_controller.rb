@@ -7,12 +7,11 @@ class ApplicationController < ActionController::Base
     redirect_to protocol: "https://" unless request.ssl?
     return true
   end
-  # must be off while in development
 
   def set_search
    @search_adie = Adie.search(params[:q])
    @search_company = Company.search(params[:q])
-  #  @search_staff = Staff.search(params[:q])
+   @search_employee = Employee.search(params[:q])
   end
 
   # def require_login
@@ -23,10 +22,16 @@ class ApplicationController < ActionController::Base
   def signed_in?
     return false if ! current_account.present?
     adie = Adie.find_by(github_username: current_account.username)
+    domain = "@adadevelopersacademy.org"
+    staff = Employee.where("email like ?", "%#{domain}")
 
-    flash[:error] = "You are not in the database and cannot log in. Please contact an administrator at info@adadevelopersacademy.org!" if adie.nil?
+    if adie.nil? || staff.nil?
+      flash[:notice] = "You are not in the database and cannot log in. Please contact an administrator at info@adadevelopersacademy.org!"
+    end
 
-    return adie.present?
+    if adie.present? || staff.present?
+      return true
+    end
 
   end
 

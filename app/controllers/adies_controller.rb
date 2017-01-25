@@ -1,12 +1,9 @@
 class AdiesController < ApplicationController
   before_action :require_authentication!
-  # before_action :require_login
-  before_action :find_adie, only: [:show, :edit, :update]
+  before_action :find_adie, only: [:show, :edit, :update, :can_edit]
   before_filter :set_search
 
   def index
-    # @adies, @alphaParams = Adie.all.alpha_paginate(params[:letter], {enumerate: true, numbers: true, pagination_class: "pagination-centered"}){|adie| adie.first_name + adie.last_name}
-
     if !params[:commit].nil? && params[:commit].downcase == "search"
       if !params[:q].blank?
         @results = Adie.search(params[:q])
@@ -39,13 +36,25 @@ class AdiesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+    if can_edit?
+      render 'edit'
+    else
+      flash[:notice] = "You do not have access to edit this account."
+      redirect_to adies_path
+    end
+  end
 
   def update
-    if @adie.update(adie_params)
-      render 'show'
+    if can_edit?
+      if @adie.update(adie_params)
+        render 'show'
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      flash[:notice] = "You do not have access to edit this account."
+      redirect_to adies_path
     end
   end
 
@@ -63,6 +72,11 @@ private
 
   def find_adie
     @adie = Adie.find(params[:id])
+  end
+
+  def can_edit?
+    # find_adie
+    current_account.username == @adie.github_username || current_account.username == "ellevargas"
   end
 
 end

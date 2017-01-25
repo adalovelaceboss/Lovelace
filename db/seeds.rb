@@ -9,11 +9,15 @@
 require 'csv'
 
   CSV.foreach ('csvs/adies.csv') do |csv_obj|
-    Adie.create(cohort: csv_obj[1], pref_pronouns: csv_obj[2], first_name: csv_obj[3], last_name: csv_obj[4], email: csv_obj[5], twitter_handle: csv_obj[12], linkedin: csv_obj[13], github_username: csv_obj[14], internship_company: csv_obj[19], adie_image: csv_obj[23])
+    Adie.create(cohort: csv_obj[1], pref_pronouns: csv_obj[2], first_name: csv_obj[3], last_name: csv_obj[4], github_username: csv_obj[14], internship_company: csv_obj[19], adie_image: csv_obj[23])
   end
 
   CSV.foreach ('csvs/companies.csv') do |csv_obj|
-    Company.create(company_id: csv_obj[0], company_name: csv_obj[1], address: csv_obj[2], city: csv_obj[3], state: csv_obj[4], zip_code: csv_obj[5], business_field: csv_obj[6], website: csv_obj[7], logo: csv_obj[8])
+    Company.create(company_name: csv_obj[0], address: csv_obj[1], city: csv_obj[2], state: csv_obj[3], zip_code: csv_obj[4], business_field: csv_obj[5], website: csv_obj[6], logo: csv_obj[7])
+  end
+
+  CSV.foreach ('csvs/employees.csv') do |csv_obj|
+    Employee.create(job_title: csv_obj[0], first_name: csv_obj[2], last_name: csv_obj[3], staff_image: csv_obj[8])
   end
 
   # BRUH. MAKE HEADERS A REQUIREMENT AND THEN TRANSLATE THE HEADERS INTO THESE OBJECTS FOR EASY CALL THROUGHOUT THE APPLICATION. STRONG PARAMS FTW.

@@ -1,12 +1,14 @@
 class ApplicationController < ActionController::Base
   include Stormpath::Rails::Controller
   protect_from_forgery with: :exception
-  before_filter :redirect_https
-
-  def redirect_https
-    redirect_to protocol: "https://" unless request.ssl?
-    return true
-  end
+  # before_filter :redirect_https
+  #
+  # def redirect_https
+  #   # if Rails.env == :production
+  #     redirect_to protocol: "https://" unless request.ssl?
+  #     return true
+  #   # end
+  # end
 
   def set_search
    @search_adie = Adie.search(params[:q])

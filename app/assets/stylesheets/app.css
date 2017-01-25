@@ -36,7 +36,7 @@ a:visited {
 }
 
 a:hover, a:focus {
-  bottom-border-color: #114e48;
+  color: #114e48;
 }
 
 .greeter_text {
